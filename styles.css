@@ -1,0 +1,69 @@
+body {
+  display: grid;
+  place-content: center;
+  margin: 0;
+  height: 1000px;
+  position: relative;
+}
+body .circle {
+  background-color: yellow;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  animation: around 5s linear infinite;
+  animation-fill-mode: forwards;
+  position: absolute;
+}
+body .circle:hover {
+  display: none;
+}
+body .loading-container {
+  border: solid 2px black;
+  width: 300px;
+  height: 30px;
+}
+body .loading-container .loadingbar {
+  height: 30px;
+  background-color: rgb(21, 230, 181);
+  animation: loading 3s linear infinite;
+}
+
+@keyframes around {
+  0%, 100% {
+    transform: translate(0vw, 0vh);
+    border-radius: 50%;
+    top: 0px;
+    left: 0px;
+  }
+  25% {
+    transform: translate(100vw, 0vh);
+    top: 0px;
+    left: -50px;
+    border-radius: 0%;
+  }
+  50% {
+    transform: translate(100vw, 100vh);
+    border-radius: 50%;
+    left: -50px;
+    top: -50px;
+  }
+  75% {
+    transform: translate(0vw, 100vh);
+    left: 0;
+    top: -50px;
+    border-radius: 0%;
+  }
+}
+@keyframes loading {
+  0% {
+    width: 0px;
+  }
+  50% {
+    width: 150px;
+  }
+  100% {
+    width: 300px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
